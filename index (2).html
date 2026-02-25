@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bennett Lin | Engineering Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mit-red: #A31F34;
+            --obsidian: #0F1115;
+            --surface: #1A1D23;
+            --text-main: #E2E8F0;
+            --text-dim: #94A3B8;
+            --accent-border: rgba(255, 255, 255, 0.12);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--obsidian);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(15, 17, 21, 0.85);
+            border-bottom: 1px solid var(--accent-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+        }
+
+        .profile-nav { display: flex; align-items: center; gap: 15px; }
+        .nav-pfp { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 6px; 
+            object-fit: cover; 
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav-name { font-weight: 600; font-size: 1.1rem; letter-spacing: -0.5px; color: white; }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: white; }
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding: 20px;
+        }
+
+        .hero-content p { 
+            font-size: 1.6rem; 
+            font-weight: 300; 
+            color: white;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.9);
+            line-height: 1.5;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 0 10px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .contact-links a:hover { 
+            border-color: var(--mit-red); 
+            background: rgba(163, 31, 52, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .section-container { padding: 80px 8%; border-bottom: 1px solid var(--accent-border); }
+        .section-header {
+            text-align: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-dim);
+            margin-bottom: 50px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .skill-item h4 { color: var(--mit-red); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
+        .skill-item p { font-size: 0.9rem; color: var(--text-dim); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--accent-border);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+
+        .project-card img { width: 100%; height: 320px; object-fit: cover; border-bottom: 1px solid var(--accent-border); }
+        .project-info { padding: 35px; text-align: center; }
+        .project-info h3 { margin: 0 0 12px 0; font-weight: 600; color: white; font-size: 1.2rem; }
+        .project-info p { color: var(--text-dim); font-size: 0.9rem; font-weight: 300; }
+
+        .pending-box {
+            height: 320px; 
+            background: var(--surface); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            border-bottom: 1px solid var(--accent-border);
+        }
+        .pending-text { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-nav">
+            <img src="https://github.com/user-attachments/assets/61d08fc2-2f4a-40e9-b614-4314a39641ca" alt="Bennett Lin" class="nav-pfp">
+            <span class="nav-name">BENNETT LIN</span>
+        </div>
+        <nav>
+            <a href="index.html">WORK</a>
+            <a href="#">RESUME</a>
+            <a href="#">ABOUT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://github.com/user-attachments/assets/4c3f2f16-20dc-4869-aa53-eac48975d78d" alt="Background" class="hero-bg">
+        <div class="hero-content">
+            <p>Ambitious, motivated, and very hands-on undergraduate student at <strong>MIT</strong>! I love building things and am pursuing a Bachelor's degree in Mechanical Engineering, with a focus on Control, Instrumentation, and Robotics (Course 2A-6). If you have any inquiries, feel free to reach out to me!</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/bennettlin11">LINKEDIN</a>
+                <a href="mailto:blin11@mit.edu">EMAIL</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="section-header">Technical Toolkit</div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h4>CAD & Design</h4>
+                <p>Siemens NX, Onshape, 3D Printing (Bambu Lab & Prusa)</p>
+            </div>
+            <div class="skill-item">
+                <h4>Systems & Robotics</h4>
+                <p>Control Systems, Electronics, FRC Competition</p>
+            </div>
+            <div class="skill-item">
+                <h4>Software</h4>
+                <p>Python, GitHub, Unreal Engine Blueprints</p>
+            </div>
+            <div class="skill-item">
+                <h4>Manufacturing</h4>
+                <p>Manual Lathe, Mechanical Prototyping, Laser Cutting, Fabrication</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-container" style="border-bottom: none;">
+        <div class="section-header">Selected Engineering Projects</div>
+        <div class="gallery-grid">
+            
+            <a href="brex-intake.html" class="project-card">
+                <img src="https://github.com/user-attachments/assets/80e35510-3697-47a2-91de-284d1434d87d" alt="B-REX Intake Mechanism">
+                <div class="project-info">
+                    <h3>Team 1023 B-REX Intake Design</h3>
+                    <p>Iterative design for the 2025 FRC Season</p>
+                </div>
+            </a>
+            
+            <a href="water-filtration.html" class="project-card">
+                <img src="https://github.com/user-attachments/assets/af2b2c5a-df8b-4039-ad18-9cd57e728c65" alt="Water Filtration Unit">
+                <div class="project-info">
+                    <h3>Reverse Osmosis Water Filtration Unit</h3>
+                    <p>Engineering design and development for LB3J Water Technology</p>
+                </div>
+            </a>
+
+            <a href="#" class="project-card">
+                <img src="https://github.com/user-attachments/assets/9047dc27-45df-4db3-8d59-3658a2138f66" alt="MASLAB 2026 Robot">
+                <div class="project-info">
+                    <h3>MASLAB 2026 Robot</h3>
+                    <p>Mechanical design and hardware integration for the MIT autonomous robotics competition</p>
+                </div>
+            </a>
+
+            <a href="#" class="project-card">
+                <img src="https://github.com/user-attachments/assets/20e9db61-6acc-4cda-8061-364fd16f31b8" alt="Ri3D Mechanisms">
+                <div class="project-info">
+                    <h3>FIRSTxMIT Robot In 3 Days</h3>
+                    <p>Mechanisms and Electronics development for Ri3D</p>
+                </div>
+            </a>
+
+            <div class="project-card" style="opacity: 0.8; cursor: default;">
+                <div class="pending-box">
+                    <span class="pending-text">[ IMAGE_PENDING ]</span>
+                </div>
+                <div class="project-info">
+                    <h3>FSAE Battery Cart</h3>
+                    <p>Custom power solutions for MIT FSAE Motorsports</p>
+                </div>
+            </div>
+
+            <div class="project-card" style="opacity: 0.5; cursor: default;">
+                <div class="pending-box">
+                    <span class="pending-text">[ PROJECT_PENDING ]</span>
+                </div>
+                <div class="project-info">
+                    <h3>MIT FSAE Engineering</h3>
+                    <p>Developments with the Formula SAE Team</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
