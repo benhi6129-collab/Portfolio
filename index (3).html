@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO Water Filtration | Bennett Lin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mit-red: #A31F34;
+            --obsidian: #0F1115;
+            --surface: #1A1D23;
+            --text-main: #E2E8F0;
+            --text-dim: #94A3B8;
+            --accent-border: rgba(255, 255, 255, 0.12);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--obsidian);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 5%; }
+
+        header { text-align: center; margin-bottom: 80px; }
+        .back-link { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 0.75rem; 
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--mit-red); }
+        
+        h1 { font-weight: 600; font-size: 2.2rem; margin: 20px 0; letter-spacing: -1px; }
+        .project-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--mit-red); text-transform: uppercase; }
+
+        .main-media { margin-bottom: 100px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: var(--surface); border: 1px solid var(--accent-border); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        .main-caption { 
+            text-align: center; 
+            max-width: 800px; 
+            margin: 30px auto; 
+            font-size: 1.1rem; 
+            font-weight: 300; 
+            color: var(--text-dim);
+            border-top: 1px solid var(--accent-border);
+            padding-top: 30px;
+        }
+
+        .iteration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .column h2 { 
+            font-size: 0.8rem; 
+            font-family: 'JetBrains Mono', monospace; 
+            color: var(--mit-red); 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card { background: var(--surface); border: 1px solid var(--accent-border); padding: 0; margin-bottom: 40px; border-radius: 4px; overflow: hidden; }
+        .card img { width: 100%; display: block; border-bottom: 1px solid var(--accent-border); }
+        
+        .card-content { padding: 25px; font-size: 0.95rem; font-weight: 300; color: var(--text-dim); text-align: center; }
+        .card-content strong { 
+            display: block; 
+            color: white; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            margin-bottom: 8px; 
+            font-size: 0.9rem;
+        }
+
+        .collage-row { display: flex; gap: 10px; border-bottom: 1px solid var(--accent-border); }
+        .collage-row img { width: 50%; height: auto; border-bottom: none !important; }
+
+        .analysis-block {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--mit-red);
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 20px 0 40px 0;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--mit-red);
+            color: white;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            letter-spacing: 1px;
+            margin-top: 25px;
+        }
+        .btn-link:hover { background: #821829; transform: translateY(-2px); }
+
+        @media (max-width: 850px) { .iteration-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← RETURN TO WORK</a>
+            <div class="project-meta">LB3J Water Tech // 2024 Development</div>
+            <h1>Reverse Osmosis Water Filtration Unit</h1>
+        </header>
+
+        <section class="main-media">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/zdLC0KE8WEM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="main-caption">
+                For my engineering project at the University of Toledo in 2024, my group decided to tackle one of the grand challenges of engineering: accessing clean water. Overall design consisted of a 45psi water pump, RO membrane, and carbon filter.
+            </p>
+        </section>
+
+        <div class="iteration-grid">
+            <div class="column">
+                <h2>Water Filtration Unit</h2>
+                
+                <div class="card">
+                    <img src="https://github.com/user-attachments/assets/af2b2c5a-df8b-4039-ad18-9cd57e728c65" alt="Primary Unit Documentation">
+                    <img src="https://github.com/user-attachments/assets/e276f18c-9cab-4a6d-91d9-4b387867bfed" alt="Interior Details">
+                    <div class="collage-row">
+                        <img src="https://github.com/user-attachments/assets/0014e1b9-a572-49a0-9a34-1aa8b1cd1255" alt="Filtration Stage 1">
+                        <img src="https://github.com/user-attachments/assets/1752ddb2-bcd7-4424-a88c-69f42c9513fe" alt="Filtration Stage 2">
+                    </div>
+                </div>
+
+                <h2>Future Iterations</h2>
+                <div class="card-content" style="text-align: left; padding: 0;">
+                    Plan for a possible upgraded version would consist of a sustainable power source, 3D-printed panels with easy access to RO membrane replacement, a more compact design, a better pump, portability, and affordability. Additionally, it would include testing for water purity, which was not done for the first iteration.
+                    
+                    <div style="text-align: center;">
+                        <a href="https://drive.google.com/file/d/1-BYIWbFcTbvdoYo2RTT6HmxYnRXIo0SO/view?usp=sharing" class="btn-link" target="_blank">VIEW PROJECT DOCUMENTATION</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Initial Concept</h2>
+                <div class="card">
+                    <img src="https://github.com/user-attachments/assets/e793bbf6-f3f6-4540-b019-ddd2a08e5027" alt="Initial Concept Design">
+                    <div class="card-content">
+                        Wanted a water filtration system that works while also considering a saltwater battery. Ultimately settled on a general system revolved around the reverse osmosis membrane, including a solar panel as a source of power.
+                    </div>
+                </div>
+
+                <h2>Challenges</h2>
+                <div class="analysis-block">
+                    <strong>// TECHNICAL_LOG</strong><br><br>
+                    Time constraint of two months, where we spent the first month researching our topic. Ordered parts took too long to arrive, the testing kit was not received, and the solar panel was not the correct order, therefore incompatible with our design. Also, 45psi was not enough to filter the water through the RO membrane, though our findings stated that 45psi was the minimum compatible pressure.
+                </div>
+
+                <h2>Fixes</h2>
+                <div class="card">
+                    <img src="https://s13.gifyu.com/images/bvVci.gif" alt="Filtration Fix Demonstration">
+                    <div class="card-content">
+                        <strong>Pressure Optimization</strong>
+                        Included a shut off valve in the tubing and having it partially closed, creating enough back pressure inside the RO membrane to filter more water. Though the ratio wasn't 50/50, it was able to produce a consistent stream of clean water while return back the brine.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
