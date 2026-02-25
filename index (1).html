@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-REX Intake Design | Bennett Lin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mit-red: #A31F34;
+            --obsidian: #0F1115;
+            --surface: #1A1D23;
+            --text-main: #E2E8F0;
+            --text-dim: #94A3B8;
+            --accent-border: rgba(255, 255, 255, 0.12);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--obsidian);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 5%; }
+
+        header { text-align: center; margin-bottom: 80px; }
+        .back-link { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 0.75rem; 
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--mit-red); }
+        
+        h1 { font-weight: 600; font-size: 2.2rem; margin: 20px 0; letter-spacing: -1px; }
+        .project-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--mit-red); text-transform: uppercase; }
+
+        .main-media { margin-bottom: 100px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: var(--surface); border: 1px solid var(--accent-border); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        .main-caption { 
+            text-align: center; 
+            max-width: 800px; 
+            margin: 30px auto; 
+            font-size: 1.1rem; 
+            font-weight: 300; 
+            color: var(--text-dim);
+            border-top: 1px solid var(--accent-border);
+            padding-top: 30px;
+        }
+
+        .iteration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 120px;
+            align-items: start;
+        }
+
+        .column h2 { 
+            font-size: 0.8rem; 
+            font-family: 'JetBrains Mono', monospace; 
+            color: var(--mit-red); 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card { background: var(--surface); border: 1px solid var(--accent-border); padding: 0; margin-bottom: 40px; border-radius: 4px; overflow: hidden; }
+        .card img { width: 100%; display: block; border-bottom: 1px solid var(--accent-border); }
+        
+        .card-content { padding: 25px; font-size: 0.95rem; font-weight: 300; color: var(--text-dim); text-align: center; }
+        .card-content strong { 
+            display: block; 
+            color: white; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            margin-bottom: 8px; 
+            font-size: 0.9rem;
+        }
+
+        .analysis-block {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--mit-red);
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 20px 0 40px 0;
+        }
+
+        @media (max-width: 850px) { .iteration-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← RETURN TO WORK</a>
+            <div class="project-meta">FRC Team 1023 // B-REX // 2025 SEASON</div>
+            <h1>Intake System Design & Iteration</h1>
+        </header>
+
+        <section class="main-media">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/eXZOVki7iJQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="main-caption">
+                Co-designed a high-efficiency ground intake for the 2025 season robot. The system integrates a 4-bar linkage deployment mechanism specifically engineered to reliably retrieve 4.5”x11.875” PVC game pieces (GP) off the floor.
+            </p>
+        </section>
+
+        <div class="iteration-grid">
+            <div class="column">
+                <h2>Design Evolution</h2>
+                
+                <div class="card">
+                    <img src="https://github.com/user-attachments/assets/64ed2a54-481f-404a-bdfa-afebd0c3fd85" alt="Intake V1 Top View">
+                    <img src="https://github.com/user-attachments/assets/6f8524ee-440e-415b-8a25-4e2264004edb" alt="Intake V1 Front View" style="border-top: 1px solid var(--accent-border);">
+                    <div class="card-content">
+                        <strong>Intake Design V1</strong>
+                        Featured an Archimedes screw bottom roller and black compliant wheels (1.5" spacing). This version utilized guide panels and star wheels to push GPs into the indexer.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://github.com/user-attachments/assets/4a18eeba-858f-4c59-9261-df676274c639" alt="Intake V2 System">
+                    <div class="card-content">
+                        <strong>Intake Design V2</strong>
+                        Simplified the mechanism by replacing the bottom roller with a passive ramp. Added smoother internal guide panels and increased wheel density for improved durability and speed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Technical Analysis</h2>
+
+                <div class="card">
+                    <img src="https://s13.gifyu.com/images/bvVv9.gif" alt="B-REX Proof of Concept Prototype">
+                    <div class="card-content">
+                        <strong>Proof of Concept</strong>
+                        Early wooden prototyping used to validate roller spacing and bumper clearance. Initial tests confirmed the Archimedes screw's role in orienting perpendicular game pieces.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://s13.gifyu.com/images/bvVvn.gif" alt="Guide Panels V1">
+                    <div class="card-content">
+                        <strong>Guide Panels V1</strong>
+                        3D-printed panels located after intake to push GP into the scoring indexer.
+                    </div>
+                </div>
+
+                <div class="analysis-block">
+                    <strong>// TECHNICAL_NOTICES</strong><br><br>
+                    - GP that collided with the intake side panels would go up the intake vertically, becoming jammed.<br>
+                    - Archimedes screw roller did not play a big role in orienting GP.<br>
+                    - Teeth on ramp interfered with field carpet.
+                </div>
+
+                <div class="card">
+                    <img src="https://s13.gifyu.com/images/bvVv6.gif" alt="Guide Panels V2 Optimized">
+                    <div class="card-content">
+                        <strong>Guide Panels V2</strong>
+                        Implementation of optimized panels resolved the vertical jamming issue. This refinement made the transfer process into the scoring indexer faster and more consistent.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://github.com/user-attachments/assets/ac85c27c-cad0-45e8-a6b6-d86f4abf795e" alt="Final Resolution Design">
+                    <div class="card-content">
+                        <strong>Final Resolution</strong>
+                        Transitioned to a smoother ramp design. Orientation teeth were removed to prevent field carpet damage while maintaining intaking efficiency.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
